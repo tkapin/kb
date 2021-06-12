@@ -1,4 +1,5 @@
 $global:mainDirPath = "C:\Users\tomas\main"
+$global:gnuBinPath = "$env:ProgramFiles\Git\usr\bin"
 
 Function Set-LocationDownloads {Set-Location "$env:USERPROFILE\Downloads"}
 
@@ -8,7 +9,7 @@ Function Set-LocationMain {Set-Location $global:mainDirPath}
 
 Function Set-LocationWorkshop {Set-Location "$global:mainDirPath\workshop"}
 
-Function Open-TotalCommander {param([string] $path = $(Get-Location)) & "C:\totalcmd\TOTALCMD64.EXE" /O /L $path /P=L}
+Function Open-TotalCommander {param([string] $path = $(Get-Location)) & "$env:ProgramFiles\totalcmd\TOTALCMD64.EXE" /O /L $path /P=L}
 
 Function Get-MarksFilePath {return "$env:USERPROFILE\marks.xml"}
 
@@ -60,15 +61,20 @@ Set-Alias -Name cdg -Value Set-LocationGit
 Set-Alias -Name cdm -Value Set-LocationMain
 Set-Alias -Name cdw -Value Set-LocationWorkshop
 
+# Programs
 Set-Alias -Name tc -Value Open-TotalCommander
-Set-Alias -Name find -Value "C:\main\apps\gnuwin32\bin\find.exe"
+Set-Alias -Name inkscape -Value "$env:ProgramFiles\Inkscape\inkscape.exe"
 
+# GNU aliases
+Set-Alias -Name diff -Value "$gnuBinPath\diff.exe" -Force
+Set-Alias -Name find -Value "$gnuBinPath\find.exe"
+Set-Alias -Name vim -Value "$gnuBinPath\vim.exe"
+
+# Mark & Recall
 Set-Alias -Name m -Value Set-Mark
 Set-Alias -Name r -Value Open-Mark
 Set-Alias -Name d -Value Remove-Mark
 Set-Alias -Name l -Value Get-Marks
-
-Set-Alias -Name clin Connect-DevTestLabLinux
 
 Set-Alias -Name t -Value Set-Title
 
