@@ -1,5 +1,5 @@
 [Buttonbar]
-Buttoncount=10
+Buttoncount=13
 button1=wcmicons.dll
 cmd1=cm_Rereadsource
 iconic1=0
@@ -27,6 +27,12 @@ iconic8=0
 menu8=Main
 button9=
 iconic9=0
-button10=wcmicons.dll,47
-cmd10=cm_SearchFor
-iconic10=0
+button10=C:\Users\tomas\icons\onedrive.ico
+cmd10=cd C:\Users\tomas\OneDrive\
+button11=C:\Users\tomas\icons\git.ico
+cmd11=cd C:\Users\tomas\main\git\
+button12=
+iconic12=0
+button13=wcmicons.dll,47
+cmd13=cm_SearchFor
+iconic13=0
